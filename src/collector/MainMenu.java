@@ -285,7 +285,7 @@ class PanelButtonMouseAdapter extends MouseAdapter{
 	@Override
 	public void mousePressed(MouseEvent e)
 	{
-		panel.setBackground(SystemColor.BLUE);
+		panel.setBackground(SystemColor.textHighlight);
 	}
 	@Override
 	public void mouseReleased(MouseEvent e)
@@ -295,6 +295,6 @@ class PanelButtonMouseAdapter extends MouseAdapter{
 	@Override
 	public void mouseExited(MouseEvent e)
 	{
-		panel.setBackground(SystemColor.textHighlight);
+		panel.setBackground(SystemColor.blue);
 	}
 }
