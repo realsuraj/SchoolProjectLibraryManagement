@@ -295,6 +295,6 @@ class PanelButtonMouseAdapter extends MouseAdapter{
 	@Override
 	public void mouseExited(MouseEvent e)
 	{
-		panel.setBackground(Color.textHighlight);
+		panel.setBackground(SystemColor.textHighlight);
 	}
 }
