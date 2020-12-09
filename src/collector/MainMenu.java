@@ -31,6 +31,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 
 
@@ -45,6 +47,9 @@ public class MainMenu extends JFrame {
 	private JTextField EditiontextField;
 	private JTextField PricetextField;
 	private JTextField PagetextField;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
 
 	/**
 	 * Launch the application.
@@ -196,9 +201,67 @@ public class MainMenu extends JFrame {
 		layeredPane.add(LayerPanelAddStudent, "name_442041253215400");
 		LayerPanelAddStudent.setLayout(null);
 		
-		JLabel lblNewLabel_3 = new JLabel("Add Student");
-		lblNewLabel_3.setBounds(302, 219, 56, 16);
+		JLabel lblNewLabel_3 = new JLabel("student id");
+		lblNewLabel_3.setBounds(113, 52, 56, 16);
 		LayerPanelAddStudent.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_11 = new JLabel("name");
+		lblNewLabel_11.setBounds(113, 102, 56, 16);
+		LayerPanelAddStudent.add(lblNewLabel_11);
+		
+		JLabel lblNewLabel_12 = new JLabel("Father's Name");
+		lblNewLabel_12.setBounds(113, 156, 109, 16);
+		LayerPanelAddStudent.add(lblNewLabel_12);
+		
+		JLabel lblNewLabel_13 = new JLabel("course");
+		lblNewLabel_13.setBounds(113, 201, 56, 16);
+		LayerPanelAddStudent.add(lblNewLabel_13);
+		
+		JLabel lblNewLabel_15 = new JLabel("Year");
+		lblNewLabel_15.setBounds(113, 246, 56, 16);
+		LayerPanelAddStudent.add(lblNewLabel_15);
+		
+		JLabel lblNewLabel_16 = new JLabel("Semester");
+		lblNewLabel_16.setBounds(113, 291, 56, 16);
+		LayerPanelAddStudent.add(lblNewLabel_16);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"2019", "2020", "2021"}));
+		comboBox.setBounds(223, 243, 66, 22);
+		LayerPanelAddStudent.add(comboBox);
+		
+		textField = new JTextField();
+		textField.setBounds(203, 49, 116, 22);
+		LayerPanelAddStudent.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(203, 96, 116, 22);
+		LayerPanelAddStudent.add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(203, 153, 116, 22);
+		LayerPanelAddStudent.add(textField_2);
+		textField_2.setColumns(10);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"BBA", "B.Com", "BCA"}));
+		comboBox_1.setBounds(223, 201, 66, 31);
+		LayerPanelAddStudent.add(comboBox_1);
+		
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8"}));
+		comboBox_2.setBounds(223, 288, 66, 22);
+		LayerPanelAddStudent.add(comboBox_2);
+		
+		JButton btnNewButton_2 = new JButton("back");
+		btnNewButton_2.setBounds(89, 363, 97, 25);
+		LayerPanelAddStudent.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("save");
+		btnNewButton_3.setBounds(223, 363, 97, 25);
+		LayerPanelAddStudent.add(btnNewButton_3);
 		
 		final JPanel LayerPanelIssueBook = new JPanel();
 		layeredPane.add(LayerPanelIssueBook, "name_442043332269000");
@@ -374,6 +437,20 @@ public class MainMenu extends JFrame {
 		lblHelp.setFont(new Font("Dialog", Font.BOLD, 16));
 		lblHelp.setBounds(72, 13, 98, 21);
 		panelHelp.add(lblHelp);
+		
+		JButton btnExit = new JButton("X");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				JFrame frame = new JFrame("EXIT");
+				if(JOptionPane.showConfirmDialog(frame, "Confirm if you want Exit","Exit",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) 
+				{
+					System.exit(0);
+				}
+			}
+		});
+		btnExit.setBounds(842, 0, 65, 30);
+		contentPane.add(btnExit);
 		
 		
 		
