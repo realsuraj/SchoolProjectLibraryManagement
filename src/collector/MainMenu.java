@@ -71,9 +71,29 @@ public class MainMenu extends JFrame {
 		layeredPane.add(LayerPanelAddBook, "name_441987407832800");
 		LayerPanelAddBook.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("add Book");
-		lblNewLabel_1.setBounds(280, 190, 56, 16);
+		JLabel lblBookid = new JLabel("Book Id");
+		lblBookid.setBounds(108, 51, 56, 16);
+		LayerPanelAddBook.add(lblBookid);
+		
+		JLabel lblNewLabel_1 = new JLabel("Book Name");
+		lblNewLabel_1.setBounds(108, 95, 79, 16);
 		LayerPanelAddBook.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_7 = new JLabel("Publisher");
+		lblNewLabel_7.setBounds(108, 138, 56, 16);
+		LayerPanelAddBook.add(lblNewLabel_7);
+		
+		JLabel lblNewLabel_8 = new JLabel("Edition");
+		lblNewLabel_8.setBounds(108, 186, 56, 16);
+		LayerPanelAddBook.add(lblNewLabel_8);
+		
+		JLabel lblNewLabel_9 = new JLabel("Price");
+		lblNewLabel_9.setBounds(108, 238, 56, 16);
+		LayerPanelAddBook.add(lblNewLabel_9);
+		
+		JLabel lblNewLabel_10 = new JLabel("pages");
+		lblNewLabel_10.setBounds(108, 289, 56, 16);
+		LayerPanelAddBook.add(lblNewLabel_10);
 		
 		final JPanel LayerPanelStatistics = new JPanel();
 		layeredPane.add(LayerPanelStatistics, "name_442039687065600");
@@ -123,14 +143,8 @@ public class MainMenu extends JFrame {
 		paneMenu.setLayout(null);
 		
 		JPanel panelAddBook = new JPanel();
-		panelAddBook.addMouseListener(new PanelButtonMouseAdapter(panelAddBook));
-		panelAddBook.setBackground(Color.BLUE);
-		panelAddBook.setBounds(12, 61, 236, 43);
-		paneMenu.add(panelAddBook);
-		panelAddBook.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Add Book");
-		lblNewLabel.addMouseListener(new MouseAdapter() {
+		panelAddBook.addMouseListener(new PanelButtonMouseAdapter(panelAddBook)
+				{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				layeredPane.removeAll();
@@ -139,7 +153,13 @@ public class MainMenu extends JFrame {
 				layeredPane.revalidate();
 				
 			}
-		});
+				});
+		panelAddBook.setBackground(Color.BLUE);
+		panelAddBook.setBounds(12, 61, 236, 43);
+		paneMenu.add(panelAddBook);
+		panelAddBook.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Add Book");
 		lblNewLabel.setForeground(SystemColor.text);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 16));
@@ -147,14 +167,8 @@ public class MainMenu extends JFrame {
 		panelAddBook.add(lblNewLabel);
 		
 		JPanel panelStatistics = new JPanel();
-		panelStatistics.addMouseListener(new PanelButtonMouseAdapter(panelStatistics));
-		panelStatistics.setBackground(Color.BLUE);
-		panelStatistics.setBounds(12, 117, 236, 43);
-		paneMenu.add(panelStatistics);
-		panelStatistics.setLayout(null);
-		
-		JLabel lblStatistic = new JLabel("Statistic");
-		lblStatistic.addMouseListener(new MouseAdapter() {
+		panelStatistics.addMouseListener(new PanelButtonMouseAdapter(panelStatistics)
+				{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				layeredPane.removeAll();
@@ -163,7 +177,13 @@ public class MainMenu extends JFrame {
 				layeredPane.revalidate();
 				
 			}
-		});
+				});
+		panelStatistics.setBackground(Color.BLUE);
+		panelStatistics.setBounds(12, 117, 236, 43);
+		paneMenu.add(panelStatistics);
+		panelStatistics.setLayout(null);
+		
+		JLabel lblStatistic = new JLabel("Statistic");
 		lblStatistic.setBounds(80, 13, 76, 21);
 		lblStatistic.setHorizontalAlignment(SwingConstants.CENTER);
 		lblStatistic.setForeground(Color.WHITE);
@@ -171,14 +191,8 @@ public class MainMenu extends JFrame {
 		panelStatistics.add(lblStatistic);
 		
 		JPanel panelAddStudent = new JPanel();
-		panelAddStudent.addMouseListener(new PanelButtonMouseAdapter(panelAddStudent));
-		panelAddStudent.setBackground(Color.BLUE);
-		panelAddStudent.setBounds(12, 173, 236, 43);
-		paneMenu.add(panelAddStudent);
-		panelAddStudent.setLayout(null);
-		
-		JLabel lblAddStudent = new JLabel("Add Student");
-		lblAddStudent.addMouseListener(new MouseAdapter() {
+		panelAddStudent.addMouseListener(new PanelButtonMouseAdapter(panelAddStudent)
+				{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				layeredPane.removeAll();
@@ -187,7 +201,13 @@ public class MainMenu extends JFrame {
 				layeredPane.revalidate();
 				
 			}
-		});
+				});
+		panelAddStudent.setBackground(Color.BLUE);
+		panelAddStudent.setBounds(12, 173, 236, 43);
+		paneMenu.add(panelAddStudent);
+		panelAddStudent.setLayout(null);
+		
+		JLabel lblAddStudent = new JLabel("Add Student");
 		lblAddStudent.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAddStudent.setForeground(Color.WHITE);
 		lblAddStudent.setFont(new Font("Dialog", Font.BOLD, 16));
@@ -195,14 +215,8 @@ public class MainMenu extends JFrame {
 		panelAddStudent.add(lblAddStudent);
 		
 		JPanel panelIssueBook = new JPanel();
-		panelIssueBook.addMouseListener(new PanelButtonMouseAdapter(panelIssueBook));
-		panelIssueBook.setBackground(Color.BLUE);
-		panelIssueBook.setBounds(12, 229, 236, 43);
-		paneMenu.add(panelIssueBook);
-		panelIssueBook.setLayout(null);
-		
-		JLabel lblIssueBook = new JLabel("Issue Book");
-		lblIssueBook.addMouseListener(new MouseAdapter() {
+		panelIssueBook.addMouseListener(new PanelButtonMouseAdapter(panelIssueBook)
+				{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				layeredPane.removeAll();
@@ -211,7 +225,13 @@ public class MainMenu extends JFrame {
 				layeredPane.revalidate();
 				
 			}
-		});
+				});
+		panelIssueBook.setBackground(Color.BLUE);
+		panelIssueBook.setBounds(12, 229, 236, 43);
+		paneMenu.add(panelIssueBook);
+		panelIssueBook.setLayout(null);
+		
+		JLabel lblIssueBook = new JLabel("Issue Book");
 		lblIssueBook.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIssueBook.setForeground(Color.WHITE);
 		lblIssueBook.setFont(new Font("Dialog", Font.BOLD, 16));
@@ -219,14 +239,8 @@ public class MainMenu extends JFrame {
 		panelIssueBook.add(lblIssueBook);
 		
 		JPanel panelReturnBook = new JPanel();
-		panelReturnBook.addMouseListener(new PanelButtonMouseAdapter(panelReturnBook));
-		panelReturnBook.setBackground(Color.BLUE);
-		panelReturnBook.setBounds(12, 285, 236, 43);
-		paneMenu.add(panelReturnBook);
-		panelReturnBook.setLayout(null);
-		
-		JLabel lblReturnBook = new JLabel("Return Book");
-		lblReturnBook.addMouseListener(new MouseAdapter() {
+		panelReturnBook.addMouseListener(new PanelButtonMouseAdapter(panelReturnBook)
+				{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				layeredPane.removeAll();
@@ -235,7 +249,13 @@ public class MainMenu extends JFrame {
 				layeredPane.revalidate();
 				
 			}
-		});
+				});
+		panelReturnBook.setBackground(Color.BLUE);
+		panelReturnBook.setBounds(12, 285, 236, 43);
+		paneMenu.add(panelReturnBook);
+		panelReturnBook.setLayout(null);
+		
+		JLabel lblReturnBook = new JLabel("Return Book");
 		lblReturnBook.setHorizontalAlignment(SwingConstants.CENTER);
 		lblReturnBook.setForeground(Color.WHITE);
 		lblReturnBook.setFont(new Font("Dialog", Font.BOLD, 16));
@@ -243,14 +263,8 @@ public class MainMenu extends JFrame {
 		panelReturnBook.add(lblReturnBook);
 		
 		JPanel panelHelp = new JPanel();
-		panelHelp.addMouseListener(new PanelButtonMouseAdapter(panelHelp));
-		panelHelp.setBackground(Color.BLUE);
-		panelHelp.setBounds(12, 341, 236, 43);
-		paneMenu.add(panelHelp);
-		panelHelp.setLayout(null);
-		
-		JLabel lblHelp = new JLabel("Help");
-		lblHelp.addMouseListener(new MouseAdapter() {
+		panelHelp.addMouseListener(new PanelButtonMouseAdapter(panelHelp)
+				{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				layeredPane.removeAll();
@@ -259,7 +273,13 @@ public class MainMenu extends JFrame {
 				layeredPane.revalidate();
 				
 			}
-		});
+				});
+		panelHelp.setBackground(Color.BLUE);
+		panelHelp.setBounds(12, 341, 236, 43);
+		paneMenu.add(panelHelp);
+		panelHelp.setLayout(null);
+		
+		JLabel lblHelp = new JLabel("Help");
 		lblHelp.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHelp.setForeground(Color.WHITE);
 		lblHelp.setFont(new Font("Dialog", Font.BOLD, 16));
