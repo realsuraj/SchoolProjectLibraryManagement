@@ -10,18 +10,27 @@ import javax.swing.border.EmptyBorder;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
+import com.mysql.jdbc.PreparedStatement;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
+
 import java.awt.CardLayout;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 
@@ -30,6 +39,12 @@ import java.awt.CardLayout;
 public class MainMenu extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField BookIdtextField;
+	private JTextField BookNametextField;
+	private JTextField PublishertextField;
+	private JTextField EditiontextField;
+	private JTextField PricetextField;
+	private JTextField PagetextField;
 
 	/**
 	 * Launch the application.
@@ -91,9 +106,83 @@ public class MainMenu extends JFrame {
 		lblNewLabel_9.setBounds(108, 238, 56, 16);
 		LayerPanelAddBook.add(lblNewLabel_9);
 		
-		JLabel lblNewLabel_10 = new JLabel("pages");
+		JLabel lblNewLabel_10 = new JLabel("Page");
 		lblNewLabel_10.setBounds(108, 289, 56, 16);
 		LayerPanelAddBook.add(lblNewLabel_10);
+		
+		BookIdtextField = new JTextField();
+		BookIdtextField.setBounds(213, 48, 116, 22);
+		LayerPanelAddBook.add(BookIdtextField);
+		BookIdtextField.setColumns(10);
+		
+		BookNametextField = new JTextField();
+		BookNametextField.setBounds(213, 92, 116, 22);
+		LayerPanelAddBook.add(BookNametextField);
+		BookNametextField.setColumns(10);
+		
+		PublishertextField = new JTextField();
+		PublishertextField.setBounds(213, 135, 116, 22);
+		LayerPanelAddBook.add(PublishertextField);
+		PublishertextField.setColumns(10);
+		
+		EditiontextField = new JTextField();
+		EditiontextField.setBounds(213, 183, 116, 22);
+		LayerPanelAddBook.add(EditiontextField);
+		EditiontextField.setColumns(10);
+		
+		PricetextField = new JTextField();
+		PricetextField.setBounds(213, 235, 116, 22);
+		LayerPanelAddBook.add(PricetextField);
+		PricetextField.setColumns(10);
+		
+		PagetextField = new JTextField();
+		PagetextField.setBounds(213, 286, 116, 22);
+		LayerPanelAddBook.add(PagetextField);
+		PagetextField.setColumns(10);
+		
+		JButton btnNewButton = new JButton("back");
+		btnNewButton.setBounds(90, 360, 97, 25);
+		LayerPanelAddBook.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("save");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+				
+				try 
+				{
+					Class.forName("com.mysql.jdbc.Driver");
+					Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/schoollibrarymanagement","root","");
+					java.sql.PreparedStatement pStatement = connection.prepareStatement("insert into addbook(BookId, BookName, Publisher, Edition, Price, Page) values(?,?,?,?,?,?);");
+					pStatement.setString(1, BookIdtextField.getText());
+					pStatement.setString(2, BookNametextField.getText());
+					pStatement.setString(3, PublishertextField.getText());
+					pStatement.setString(4, EditiontextField.getText());
+					pStatement.setString(5, PricetextField.getText());
+					pStatement.setString(6, PagetextField.getText());
+					
+					int x = pStatement.executeUpdate();
+					if(x>0)
+					{
+						System.out.println("updated");
+					}
+					else {
+						{
+							System.out.println("fail");
+						}
+					}
+					
+				}
+				catch (Exception e1) 
+				{
+					System.out.println("fail error" + e1);
+				}
+			}
+			
+		});
+		btnNewButton_1.setBounds(232, 360, 97, 25);
+		LayerPanelAddBook.add(btnNewButton_1);
 		
 		final JPanel LayerPanelStatistics = new JPanel();
 		layeredPane.add(LayerPanelStatistics, "name_442039687065600");
